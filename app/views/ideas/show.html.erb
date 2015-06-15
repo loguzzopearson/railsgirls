@@ -1,0 +1,20 @@
+
+
+<div class="row">
+  <div class="col-md-9">
+    <%= image_tag(@idea.picture_url, width: '100%') if @idea.picture.present? %>
+  </div>
+
+  <div class="col-md-3">
+    <p><b>Name: </b><%= @idea.name %></p>
+    <p><b>Description: </b><%= @idea.description %></p>
+    <p><strong>Current Votes:</strong> <%= @idea.count_votes_up %></p>
+	<p><%= button_to 'Vote Up', like_idea_path(@idea), method: :put %></p>
+	<p><br /></p>
+	<p>
+      <%= link_to 'Back', ideas_path %> 
+<!--  <%= link_to 'Edit', edit_idea_path(@idea) %> | -->
+<!--  <%= link_to 'Destroy', @idea, data: { confirm: 'Are you sure?' }, method: :delete %> -->
+    </p>
+  </div>
+</div>
